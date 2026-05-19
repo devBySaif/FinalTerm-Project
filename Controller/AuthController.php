@@ -90,10 +90,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && ($_GET['action'] ?? '') === 'logout'
         $userModel->clearRememberToken((int) $_SESSION['user_id']);
     }
 
+    $redirectPath = '../View/login.php';
+    if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
+        $redirectPath = '../Public/index3.php';
+    }
+
     clear_remember_cookie();
     $_SESSION = [];
     session_destroy();
-    header('Location: ../View/login.php');
+    header('Location: ' . $redirectPath);
     exit;
 }
 

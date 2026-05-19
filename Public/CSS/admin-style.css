@@ -132,6 +132,12 @@ a {
     margin-bottom: 22px;
 }
 
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 .topbar h1 {
     margin: 0;
     font-size: 28px;

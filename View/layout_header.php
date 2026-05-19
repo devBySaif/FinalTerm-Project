@@ -55,9 +55,12 @@ if ($currentScript !== 'admin.php' && isset($directViewPages[$currentScript])) {
                 <p class="eyebrow">Administration</p>
                 <h1><?= e($pageTitle ?? 'Dashboard') ?></h1>
             </div>
-            <div class="admin-user">
-                <span><?= e($_SESSION['name'] ?? 'Admin') ?></span>
-                <small><?= e($_SESSION['role'] ?? 'admin') ?></small>
+            <div class="topbar-actions">
+                <div class="admin-user">
+                    <span><?= e($_SESSION['name'] ?? 'Admin') ?></span>
+                    <small><?= e($_SESSION['role'] ?? 'admin') ?></small>
+                </div>
+                <a class="button danger" href="Controller/AuthController.php?action=logout">Logout</a>
             </div>
         </header>
 

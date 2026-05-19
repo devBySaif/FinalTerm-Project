@@ -1,0 +1,265 @@
+:root {
+    --bg: #f7f8fb;
+    --surface: #ffffff;
+    --text: #212529;
+    --muted: #6c757d;
+    --primary: #2c7be5;
+    --primary-dark: #1c5db8;
+    --danger: #d6334f;
+    --border: #e5e7eb;
+    --shadow: 0 10px 30px rgba(40, 44, 63, 0.08);
+    --radius: 14px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--text);
+    background: linear-gradient(180deg, #eef2f7 0%, var(--bg) 100%);
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    padding: 0.85rem 1.3rem;
+    color: #fff;
+    background: var(--primary);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    background: var(--primary-dark);
+}
+
+button.secondary {
+    background: #6575ff;
+}
+
+button.secondary:hover {
+    background: #4a5fdf;
+}
+
+.notice,
+.form-message {
+    padding: 1rem 1.2rem;
+    border-radius: 14px;
+    margin: 1.2rem 0;
+    background: #fff;
+    border: 1px solid var(--border);
+}
+
+.notice.inline {
+    display: inline-block;
+}
+
+.form-message.success {
+    background: #e6f4ea;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.page-title,
+.hero,
+.cards,
+.form-container {
+    width: min(1200px, calc(100% - 2rem));
+    margin: 0 auto;
+}
+
+.hero {
+    padding: 4rem 2rem;
+    margin: 2rem auto;
+    border-radius: 24px;
+    background: #ffffff;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.hero.compact {
+    padding: 2.5rem 2rem;
+}
+
+.hero h1,
+.page-title h1 {
+    font-size: clamp(2rem, 2.5vw, 3rem);
+    margin: 0 0 1rem;
+}
+
+.hero p,
+.page-title p {
+    max-width: 46rem;
+    margin: 0 auto;
+    color: var(--muted);
+    line-height: 1.75;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.cards {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    margin: 2rem auto 3rem;
+}
+
+.card,
+.form-container {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+}
+
+.card {
+    padding: 1.4rem;
+}
+
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+.card p {
+    margin: 0.5rem 0;
+    color: var(--muted);
+}
+
+.card button {
+    display: inline-flex;
+    margin-top: 1rem;
+}
+
+.form-container {
+    padding: 2rem;
+    margin: 2.5rem auto;
+    max-width: 720px;
+}
+
+.form-container.wide {
+    max-width: 900px;
+}
+
+.form-container h2 {
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    font-size: 2rem;
+}
+
+.form-container label {
+    display: block;
+    margin: 1rem 0 0.4rem;
+    color: var(--muted);
+}
+
+.form-container input,
+.form-container select {
+    width: 100%;
+    padding: 0.95rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #fafbff;
+}
+
+.form-container input[type="file"] {
+    padding: 0.8rem 0.9rem;
+}
+
+.form-container button {
+    margin-top: 1.25rem;
+    width: auto;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 1rem 0 0;
+    color: var(--muted);
+}
+
+header,
+nav {
+    width: min(1200px, calc(100% - 2rem));
+    margin: 1rem auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.95);
+    border: 1px solid var(--border);
+}
+
+nav .brand {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+nav ul {
+    display: flex;
+    gap: 0.9rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--text);
+    padding: 0.55rem 0.85rem;
+    border-radius: 10px;
+}
+
+nav a:hover {
+    background: #eef3ff;
+}
+
+@media (max-width: 720px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero,
+    .form-container,
+    .page-title,
+    .cards {
+        width: calc(100% - 2rem);
+    }
+}

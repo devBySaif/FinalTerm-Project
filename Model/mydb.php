@@ -5,7 +5,7 @@ class MyDB {
         $DBHOST = "localhost";
         $DBUSER = "root";
         $DBPASS = "";
-        $DBNAME = "wti";
+        $DBNAME = "travel_guide";
         $conn = new mysqli($DBHOST, $DBUSER, $DBPASS, $DBNAME);
         return $conn;
     } 
